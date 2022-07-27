@@ -32,7 +32,7 @@ let questions = [
         choice1: ".css",
         choice2: ".js",
         choice3: ".html",
-        choice4: "jass"
+        choice4: "jass",
         answer: 2,
     },
     {
