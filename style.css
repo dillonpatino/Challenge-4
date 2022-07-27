@@ -1,3 +1,4 @@
+
 :root {
     background-color: rgb(9, 9, 47);
 }
@@ -122,4 +123,5 @@ input::placeholder {
     margin-left: 1rem;
     font-size: 2rem;
     color: rgb(28, 26, 26);
+
 }
