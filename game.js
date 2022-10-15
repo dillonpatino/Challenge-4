@@ -49,6 +49,7 @@ let questions = [
 const SCORE_POINTS = 100
 const MAX_QUESTIONS = 4
 
+// Function that will initate the game
 startGame = () => {
     questionCounter = 0
     score = 0
@@ -56,13 +57,14 @@ startGame = () => {
     getNewQuestion()
 }
 
+// Function that will present a new question when a user clicks on the "start game" button and after they answer a question
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
         localStorage.setItem('mostRecentScore', score)
 
         return window.location.assign('/end.html')
     }
-
+// question counter will create a bar at the top of the page showing the progress of the quiz
     questionCounter++
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
@@ -81,6 +83,7 @@ getNewQuestion = () => {
     acceptingAnswers = true
 }
 
+// function that will keep track of the correct and incorrect answers and tally the score
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
@@ -106,11 +109,13 @@ choices.forEach(choice => {
     })
 })
 
+// adds and displays score based on correct answers
 incrementScore = num => {
     score +=num
     scoreText.innerText = score
 }
 
+// Calls function to start game
 startGame()
 
 
